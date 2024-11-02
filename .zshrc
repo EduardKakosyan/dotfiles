@@ -7,6 +7,8 @@ export PATH=/opt/homebrew/bin:$PATH
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+alias nv='nvim -u ~/.config/avante-nvim/init.lua'
+
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
