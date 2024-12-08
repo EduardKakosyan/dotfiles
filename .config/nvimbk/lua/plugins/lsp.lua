@@ -26,6 +26,15 @@ vim.lsp.handlers["textDocument/hover"] = function(_, result, ctx, config)
   return vim.lsp.util.open_floating_preview(markdown_lines, "markdown", config)
 end
 
+require("lspconfig").pyright.setup({
+  before_init = function(_, config)
+    local venv_path = vim.fn.getcwd() .. "/.venv"
+    if vim.fn.isdirectory(venv_path) == 1 then
+      config.settings.python.pythonPath = venv_path .. "/bin/python"
+    end
+  end,
+})
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -56,15 +65,6 @@ return {
                 functionTypeParameters = false,
                 parameterNames = false,
                 rangeVariableTypes = false,
-              },
-            },
-          },
-        },
-        pyright = {
-          settings = {
-            python = {
-              analysis = {
-                django = true,
               },
             },
           },
