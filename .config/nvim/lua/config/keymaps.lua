@@ -45,6 +45,9 @@ keymap.set("n", "te", ":tabedit", opts)
 keymap.set("n", "<tab>", ":tabnext<Return>", opts)
 keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 
+-- Save on escape in normal
+keymap.set("n", "<esc>", ":w<Return>", opts)
+
 -- package-info keymaps
 set_keymap(
   "n",

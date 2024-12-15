@@ -31,6 +31,9 @@ bindkey -e  # Use Emacs keybindings
 bindkey "^[[A" up-line-or-history  # Up arrow
 bindkey "^[[B" down-line-or-history  # Down arrow
 
+alias dotfiles='tmux attach -t dotfiles'
+alias cargrep='tmux attach -t cargrep'
+
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
