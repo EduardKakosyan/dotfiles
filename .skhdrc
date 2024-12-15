@@ -4,3 +4,5 @@ alt - b : open -a 'Firefox Developer Edition'
 alt - s : open -a 'Spotify'
 alt - o : open -a 'Obsidian'
 alt - d : open -a 'Discord'
+alt - n : open -a 'Safari'
+
