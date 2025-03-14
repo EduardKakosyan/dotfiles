@@ -1,8 +1,4 @@
 {
-    "global": {
-        "enable_notification_window": false,
-        "show_in_menu_bar": false
-    },
     "profiles": [
         {
             "devices": [
@@ -16,19 +12,6 @@
                         {
                             "from": { "key_code": "right_command" },
                             "to": [{ "key_code": "escape" }]
-                        }
-                    ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 833,
-                        "vendor_id": 1452
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "caps_lock" },
-                            "to": [{ "key_code": "left_control" }]
                         }
                     ]
                 }

@@ -1,4 +1,4 @@
-alt - c : open -a 'Visual Studio Code'
+alt - c : open -a 'Cursor'
 alt - t : open -a 'Alacritty'
 alt - b : open -a 'Firefox Developer Edition'
 alt - s : open -a 'Spotify'
