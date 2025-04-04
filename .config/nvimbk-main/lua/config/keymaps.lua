@@ -5,7 +5,6 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 local Util = require("lazyvim.util")
 
--- Github Copilot
 keymap.set("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", { silent = true })
 keymap.set("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", { silent = true })
 keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", { silent = true })
@@ -37,8 +36,6 @@ keymap.set("n", "<M-l>", '<Cmd>lua require("tmux").resize_right()<CR>', { silent
 
 local set_keymap = vim.api.nvim_set_keymap
 
-keymap.set("n", "<C-a>", "ggVG")
-
 -- Split windows
 keymap.set("n", "ss", ":vsplit<Return>", opts)
 keymap.set("n", "sv", ":split<Return>", opts)
@@ -47,6 +44,9 @@ keymap.set("n", "sv", ":split<Return>", opts)
 keymap.set("n", "te", ":tabedit", opts)
 keymap.set("n", "<tab>", ":tabnext<Return>", opts)
 keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
+
+-- Save on escape in normal
+keymap.set("n", "<esc>", ":w<Return>", opts)
 
 -- package-info keymaps
 set_keymap(
@@ -79,13 +79,3 @@ set_keymap(
   "<cmd>lua require('package-info').change_version()<cr>",
   { silent = true, noremap = true, desc = "Change package version" }
 )
-
---Save with escape key
-keymap.set("n", "<esc>", ":w<CR>", opts)
-
-keymap.set("n", "<leader>rw", ":lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN })<CR>", opts)
-keymap.set("n", "<leader>rW", ":lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN })<CR>", opts)
-keymap.set("n", "<leader>re", ":lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>", opts)
-keymap.set("n", "<leader>ra", ":lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.HINT })<CR>", opts)
-keymap.set("n", "<leader>rA", ":lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.HINT })<CR>", opts)
-keymap.set("n", "<leader>rs", ":lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.INFO })<CR>", opts)
