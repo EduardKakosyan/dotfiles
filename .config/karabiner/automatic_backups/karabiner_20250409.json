@@ -36,7 +36,7 @@
                         },
                         {
                             "from": { "key_code": "right_option" },
-                            "to": [{ "mouse_key": { "y": 1536 } }]
+                            "to": [{ "consumer_key_code": "play_or_pause" }]
                         }
                     ]
                 }
