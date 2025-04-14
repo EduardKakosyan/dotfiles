@@ -4,6 +4,7 @@ fi
 
 # Add the homebrew installs to the path
 export PATH=/opt/homebrew/bin:$PATH
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/dotfiles/.oh-my-zsh"
 
