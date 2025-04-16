@@ -13,6 +13,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 alias cargrep='tmux attach -t cargrep'
 alias dotfiles='tmux attach -t dotfiles'
 alias lg='lazygit'
+alias st="$HOME/bin/.local/scripts/session-tokenizer.sh"
 
 plugins=(
     npm
