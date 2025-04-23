@@ -1,4 +1,5 @@
 alt - c : open -a 'Cursor'
+alt - a : open -a 'ChatGPT'
 alt - t : open -a 'Alacritty'
 alt - b : open -a 'Firefox Developer Edition'
 alt - s : open -a 'Spotify'
