@@ -28,7 +28,7 @@ $RECYCLE.BIN/
 # Git repositories - ignore all .git directories except the main one
 **/.git/
 !.git/
-.gitmodules
+.gitmodule
 
 # Ignore git plugin directories that might contain their own git repos
 .tmux/plugins/*/.git/
