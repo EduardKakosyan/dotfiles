@@ -1,6 +1,10 @@
 .DS_Store
+.config/github-copilot
+
 
 **/.git
 .git*
 !./.git/
 !.gitignore
+
+.config/raycast/scripts/open-cursor-on-aerospace-2.sh
