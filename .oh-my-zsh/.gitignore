@@ -10,3 +10,5 @@ log/
 
 # zcompile cached files
 *.zwc
+
+!lib/

@@ -92,7 +92,7 @@ yarn-error.log*
 
 # Make sure to keep these configuration files
 !.config/
-!.oh-my-zsh/custom/
+!.oh-my-zsh/
 !.zshrc
 !.bashrc
 !.bash_profile
