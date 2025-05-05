@@ -1,0 +1,6 @@
+{
+  "model": "qwen3:8b",
+  "provider": "ollama",
+  "approvalMode": "suggest",
+  "fullAutoErrorMode": "ask-user"
+}
