@@ -77,6 +77,10 @@ Pipfile.lock
 poetry.lock
 node_modules/
 .pnpm-store/
+venv/
+.venv/
+env/
+.env/
 
 # -----------------------------------------------------------------------------
 # Shell History & Cache
