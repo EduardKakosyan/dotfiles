@@ -1,9 +1,14 @@
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-# Path to your Oh My Zsh installation.
 export ZSH="$HOME/dotfiles/.oh-my-zsh"
-
 export PATH="$HOME/.cargo/bin:$PATH"
+
+[ -f ~/.env.local ] && source ~/.env.local
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 
 alias cargrep='tmux attach -t cargrep'
 alias dotfiles='tmux attach -t dotfiles'
@@ -21,10 +26,6 @@ plugins=(
     zsh-autocomplete
 )
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# ZSH_AUTOSUGGESTIONS_DIR="$HOME/dotfiles/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-# source "$ZSH_AUTOSUGGESTIONS_DIR/zsh-autosuggestions.zsh"
-
 
 bindkey -e  # Use Emacs keybindings
 bindkey "^[[A" up-line-or-history  # Up arrow
@@ -46,3 +47,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+export N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true

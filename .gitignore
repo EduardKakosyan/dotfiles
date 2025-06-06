@@ -1,103 +1,162 @@
-# OS generated files
+# =============================================================================
+# DOTFILES .GITIGNORE - Keep only what matters
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# OS & System Files
+# -----------------------------------------------------------------------------
 .DS_Store
-Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 ehthumbs.db
+Thumbs.db
 Desktop.ini
 $RECYCLE.BIN/
-*.swp
-*~
 
-# Editor directories and files
-.idea/
+# -----------------------------------------------------------------------------
+# Editor & IDE Files
+# -----------------------------------------------------------------------------
 .vscode/
-*.sublime-workspace
-*.sublime-project
+.idea/
+*.swp
+*.swo
+*~
+.vim/view/
+.vim/swap/
+.vim/backup/
+.vim/undo/
 
-# Sensitive folders (add your specific sensitive folders here)
-.config/github-copilot
-.ssh/
-.gnupg/
-.keys/
-.aws/
-.kube/
-.config/*token*
-.config/*secret*
+# -----------------------------------------------------------------------------
+# Secret & Sensitive Files (NEVER COMMIT THESE)
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
 .netrc
 .npmrc
+.gitconfig.local
+*token*
+*secret*
+*key*
+*password*
+.ssh/
+.gnupg/
+.aws/
+.kube/
+.docker/config.json
 
-# Git repositories - ignore all .git directories except the main one
-**/.git/
-!.git/
-.gitmodule
-
-# Ignore git plugin directories that might contain their own git repos
-.tmux/plugins/*/.git/
-.vim/plugged/*/.git/
-.config/nvim/plugged/*/.git/
-**/node_modules/.git/
-
-# Package manager directories
-node_modules/
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Log files
-*.log
-logs/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Local environment files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Temporary directories
+# -----------------------------------------------------------------------------
+# Application Caches & Data
+# -----------------------------------------------------------------------------
+.cache/
 .tmp/
 .temp/
-.cache/
+*.log
+logs/
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
 
-# History and cache files
+# -----------------------------------------------------------------------------
+# Git Repositories (exclude nested repos but keep main one)
+# -----------------------------------------------------------------------------
+**/.git/
+!/.git/
+.gitmodules
+
+# -----------------------------------------------------------------------------
+# Package Manager Files
+# -----------------------------------------------------------------------------
+package-lock.json
+yarn.lock
+Pipfile.lock
+poetry.lock
+node_modules/
+.pnpm-store/
+
+# -----------------------------------------------------------------------------
+# Shell History & Cache
+# -----------------------------------------------------------------------------
 .bash_history
 .zsh_history
 .python_history
+.node_repl_history
 .lesshst
 .viminfo
-.node_repl_history
 
-# Specific files to ignore
-.config/raycast/scripts/open-cursor-on-aerospace-2.sh
+# -----------------------------------------------------------------------------
+# Application-Specific Exclusions
+# -----------------------------------------------------------------------------
 
-# Make sure to keep these configuration files
-!.config/
-!.oh-my-zsh/
+# Raycast (exclude everything except custom scripts)
+.raycast/
+.config/raycast/
+!.config/raycast/scripts/
+.config/raycast/scripts/**/*
+!.config/raycast/scripts/*.sh
+!.config/raycast/scripts/*.js
+!.config/raycast/scripts/*.swift
+
+# GitHub Copilot (sensitive)
+.config/github-copilot/
+
+# Zed (exclude settings that change frequently)
+.config/zed/prompts/
+.config/zed/*.mdb
+.config/zed/extensions/
+
+# tmux plugins (managed by TPM)
+.tmux/plugins/*/
+!.tmux/plugins.conf
+
+# Oh My Zsh (exclude everything except custom)
+.oh-my-zsh/
+!.oh-my-zsh/custom/
+.oh-my-zsh/custom/plugins/*/
+!.oh-my-zsh/custom/plugins/*/README.md
+!.oh-my-zsh/custom/plugins/*/*.plugin.zsh
+!.oh-my-zsh/custom/themes/
+.oh-my-zsh/custom/themes/*/
+!.oh-my-zsh/custom/themes/*.zsh-theme
+
+# Neovim (exclude plugin data)
+.config/nvim/lazy-lock.json
+.config/nvim/plugin/
+.config/nvim/.luarc.json
+
+# Homebrew
+.config/homebrew/
+
+# -----------------------------------------------------------------------------
+# What TO INCLUDE (explicitly allow these)
+# -----------------------------------------------------------------------------
 !.zshrc
 !.bashrc
 !.bash_profile
 !.vimrc
 !.tmux.conf
+!.gitconfig
+!.gitignore
+!.stow-local-ignore
 !README.md
 !LICENSE
-!.gitignore
+!install.sh
+!backup.sh
+!restore.sh
+!Brewfile
+!.config/
+!.config/nvim/
+!.config/nvim/init.lua
+!.config/nvim/lua/
+!.config/alacritty/
+!.config/kitty/
+!.config/aerospace/
+!.config/yabai/
+!.config/skhd/
+!.aerospace.toml
+!.skhdrc
+!bin/
