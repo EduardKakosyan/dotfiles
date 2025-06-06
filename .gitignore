@@ -116,10 +116,10 @@ node_modules/
 # Oh My Zsh (exclude everything except custom)
 .oh-my-zsh/
 !.oh-my-zsh/custom/
+!.oh-my-zsh/custom/**
 .oh-my-zsh/custom/plugins/*/
 !.oh-my-zsh/custom/plugins/*/README.md
 !.oh-my-zsh/custom/plugins/*/*.plugin.zsh
-!.oh-my-zsh/custom/themes/
 .oh-my-zsh/custom/themes/*/
 !.oh-my-zsh/custom/themes/*.zsh-theme
 
