@@ -48,3 +48,8 @@ case ":$PATH:" in
 esac
 # pnpm end
 export N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/eduardkakosyan/.lmstudio/bin"
+# End of LM Studio CLI section
+
