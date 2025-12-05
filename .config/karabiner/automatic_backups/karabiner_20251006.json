@@ -14,8 +14,8 @@
                     },
                     "simple_modifications": [
                         {
-                            "from": { "key_code": "caps_lock" },
-                            "to": [{ "key_code": "left_control" }]
+                            "from": { "key_code": "right_command" },
+                            "to": [{ "key_code": "escape" }]
                         }
                     ]
                 },
@@ -37,15 +37,6 @@
                         {
                             "from": { "key_code": "right_option" },
                             "to": [{ "mouse_key": { "y": 1536 } }]
-                        }
-                    ]
-                },
-                {
-                    "identifiers": { "is_keyboard": true },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "caps_lock" },
-                            "to": [{ "key_code": "left_control" }]
                         }
                     ]
                 }

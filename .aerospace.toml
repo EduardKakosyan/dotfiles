@@ -19,20 +19,20 @@ automatically-unhide-macos-hidden-apps = false
 preset = 'qwerty'
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace 1'
+if.app-name-regex-substring = 'firefox'
+run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
-run = 'move-node-to-workspace 2'
+run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = 'move-node-to-workspace 3'
+run = 'move-node-to-workspace 8'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'cursor'
-run = 'move-node-to-workspace 4'
+run = 'move-node-to-workspace 9'
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
@@ -44,8 +44,8 @@ run = 'move-node-to-workspace 5'
 
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'click'
-run = 'move-node-to-workspace 6'
+if.app-name-regex-substring = 'teams'
+run = 'move-node-to-workspace 10'
 
 [gaps]
 inner.horizontal = 10
@@ -87,22 +87,63 @@ alt-shift-l = 'move right'
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
+# Switch to workspace
+# Numbers 0-9
+alt-0 = 'workspace 0'
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
 
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
+# Letters A-D
+alt-a = 'workspace A'
+alt-b = 'workspace B'
+alt-c = 'workspace C'
+alt-d = 'workspace D'
+alt-shift-0 = 'move-node-to-workspace --focus-follows-window 0'
+alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
+alt-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
+alt-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
+alt-shift-4 = 'move-node-to-workspace --focus-follows-window 4'
+alt-shift-5 = 'move-node-to-workspace --focus-follows-window 5'
+alt-shift-6 = 'move-node-to-workspace --focus-follows-window 6'
+alt-shift-7 = 'move-node-to-workspace --focus-follows-window 7'
+alt-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
+alt-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
+
+alt-shift-a = 'move-node-to-workspace --focus-follows-window A'
+alt-shift-b = 'move-node-to-workspace --focus-follows-window B'
+alt-shift-c = 'move-node-to-workspace --focus-follows-window C'
+alt-shift-d = 'move-node-to-workspace --focus-follows-window D'
 
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 alt-shift-semicolon = 'mode service'
+
+[workspace-to-monitor-force-assignment]
+# Assign numbered workspaces to built-in display
+1 = 'built-in'
+2 = 'built-in'
+3 = 'built-in'
+4 = 'built-in'
+5 = 'built-in'
+6 = 'built-in'
+7 = 'built-in'
+8 = 'built-in'
+9 = 'built-in'
+0 = 'built-in'
+
+A = 'secondary' # or use a specific monitor pattern
+B = 'secondary'
+C = 'secondary'
+D = 'secondary'
+
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
