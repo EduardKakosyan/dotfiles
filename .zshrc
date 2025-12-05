@@ -4,6 +4,8 @@
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
+typeset -U path PATH
+
 # ======================
 # Oh My Zsh location
 # ======================
