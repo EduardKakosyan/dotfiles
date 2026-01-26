@@ -30,6 +30,7 @@ alias cargrep='tmux attach -t cargrep'
 alias dotfiles='tmux attach -t dotfiles'
 alias lg='lazygit'
 alias st="$HOME/bin/.local/scripts/session-tokenizer.sh"
+alias hp="$HOME/bin/.local/scripts/tmux-harpoon.sh"
 
 # ======================
 # Oh My Zsh plugins & theme
@@ -116,4 +117,9 @@ export CARGO_HOME="$HOME/.cargo"
 
 # Add both Cargo shims (if any) AND the concrete toolchain bin rustup told you about
 export PATH="$CARGO_HOME/bin:$RUSTUP_HOME/toolchains/stable-aarch64-apple-darwin/bin:$PATH"
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/eduardkakosyan/.lmstudio/bin"
+# End of LM Studio CLI section
 
