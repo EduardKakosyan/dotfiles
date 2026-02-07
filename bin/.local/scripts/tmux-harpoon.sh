@@ -151,21 +151,31 @@ cmd_list() {
     done
 }
 
-cmd_menu() {
-    local items=""
+cmd_menu_items() {
     for i in $(seq 1 $MAX_SLOTS); do
         local session=$(get_slot $i)
         if [[ -n $session ]] && tmux has-session -t="$session" 2>/dev/null; then
-            items+="$i: $session"$'\n'
+            echo "$i: $session"
         fi
     done
+}
+
+cmd_menu() {
+    local items=$(cmd_menu_items)
 
     if [[ -z $items ]]; then
         echo "No sessions marked"
         exit 1
     fi
 
-    local selected=$(echo -n "$items" | fzf --prompt="harpoon> " --header="Jump to marked session")
+    local script="$HOME/bin/.local/scripts/tmux-harpoon.sh"
+
+    local selected
+    selected=$(echo -n "$items" | fzf \
+        --prompt="harpoon> " \
+        --header="enter: jump | x: remove" \
+        --delimiter=: \
+        --bind "x:execute-silent($script clear {1})+reload($script menu-items)")
 
     if [[ -n $selected ]]; then
         local slot="${selected%%:*}"
@@ -215,8 +225,9 @@ case "${1:-}" in
     mark)  cmd_mark "$2" ;;
     jump)  cmd_jump "$2" ;;
     list)  cmd_list ;;
-    menu)  cmd_menu ;;
-    clear) cmd_clear "$2" ;;
+    menu)       cmd_menu ;;
+    menu-items) cmd_menu_items ;;
+    clear)      cmd_clear "$2" ;;
     swap)  cmd_swap "$2" "$3" ;;
     *)
         echo "tmux-harpoon - Quick session switching"
