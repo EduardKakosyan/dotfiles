@@ -131,6 +131,7 @@ env/
 .config/nvim/lazy-lock.json
 .config/nvim/plugin/
 .config/nvim/.luarc.json
+.config/nvim.bak/
 
 # Homebrew
 .config/homebrew/
