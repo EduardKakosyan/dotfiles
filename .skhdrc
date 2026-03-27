@@ -1,4 +1,3 @@
-alt - k : open -a 'Cursor'
 alt - u : open -a 'Microsoft Teams'
 alt - t : open -a 'Alacritty'
 alt - v : open -a 'Firefox'

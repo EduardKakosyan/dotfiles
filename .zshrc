@@ -88,6 +88,12 @@ esac
 # pnpm end
 
 # ======================
+# Go
+# ======================
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
+# ======================
 # Misc env
 # ======================
 export N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
@@ -123,3 +129,6 @@ export PATH="$CARGO_HOME/bin:$RUSTUP_HOME/toolchains/stable-aarch64-apple-darwin
 export PATH="$PATH:/Users/eduardkakosyan/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# OpenClaw Completion
+source <(openclaw completion --shell zsh)

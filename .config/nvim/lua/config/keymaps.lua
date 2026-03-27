@@ -103,3 +103,7 @@ map("n", "<S-Up>", "<cmd>resize +5<CR>", window_opts)
 map("n", "<S-Down>", "<cmd>resize -5<CR>", window_opts)
 map("n", "<S-Left>", "<cmd>vertical resize +5<CR>", window_opts)
 map("n", "<S-Right>", "<cmd>vertical resize -5<CR>", window_opts)
+
+keymap.set("n", "<leader>cd", function()
+  vim.diagnostic.open_float({ focus = true, focusable = true })
+end, { desc = "Line Diagnostics (focusable)" })
