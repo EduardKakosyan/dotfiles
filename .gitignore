@@ -158,6 +158,7 @@ env/
 !.config/nvim/init.lua
 !.config/nvim/lua/
 !.config/nvim/lua/**/keymap*
+!.config/nvim/lua/**/which-key*
 !.config/alacritty/
 !.config/kitty/
 !.config/aerospace/

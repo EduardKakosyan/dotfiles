@@ -4,6 +4,8 @@ return {
     opts = {
         ensure_installed = {
             "go", "gomod", "gosum", "gowork",
+            "typescript", "tsx", "javascript", "python",
+            "html", "css",
             "lua", "vim", "vimdoc", "query",
             "json", "yaml", "toml", "markdown",
         },

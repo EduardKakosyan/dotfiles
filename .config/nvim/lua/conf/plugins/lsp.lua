@@ -20,7 +20,7 @@ return {
 
         require("mason").setup()
         require("mason-lspconfig").setup({
-            ensure_installed = { "gopls" },
+            ensure_installed = { "gopls", "ts_ls", "pyright", "tailwindcss" },
             handlers = {
                 function(server_name)
                     require("lspconfig")[server_name].setup({
@@ -93,9 +93,9 @@ return {
             end,
         })
 
-        -- Format on save for Go
+        -- Format on save
         vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = "*.go",
+            pattern = { "*.go", "*.py" },
             callback = function()
                 vim.lsp.buf.format({ async = false })
             end,

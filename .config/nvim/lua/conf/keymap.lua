@@ -5,11 +5,7 @@ local map = vim.keymap.set
 -- Disable Q
 map("n", "Q", "<nop>")
 
--- Window navigation
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-l>", "<C-w>l")
+-- Window navigation handled by tmux.nvim plugin
 
 -- Window resize
 map("n", "<C-Up>", ":resize +2<CR>", { silent = true })
