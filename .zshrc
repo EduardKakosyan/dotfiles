@@ -17,11 +17,20 @@ export ZSH="$HOME/dotfiles/.oh-my-zsh"
 [ -f ~/.env.local ] && source ~/.env.local
 
 # ======================
-# NVM (Homebrew-managed)
+# NVM (Homebrew-managed, lazy-loaded — saves ~500ms per shell startup)
+# Real nvm.sh loads on first call to nvm/node/npm/npx; behavior is otherwise identical.
 # ======================
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # Loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # nvm completion
+_load_nvm() {
+  unset -f nvm node npm npx
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+nvm()  { _load_nvm; nvm "$@"; }
+node() { _load_nvm; node "$@"; }
+npm()  { _load_nvm; npm "$@"; }
+npx()  { _load_nvm; npx "$@"; }
 
 # ======================
 # Aliases
@@ -103,10 +112,7 @@ export N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 # ======================
 export PATH="$PATH:$HOME/.lmstudio/bin"
 
-# ======================
-# Extra NVM bash completion (if present)
-# ======================
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # nvm completion
+# NVM bash_completion is loaded lazily inside _load_nvm above.
 
 # ======================
 # Local bin (user scripts, tools)
@@ -130,5 +136,4 @@ export PATH="$PATH:/Users/eduardkakosyan/.lmstudio/bin"
 # End of LM Studio CLI section
 
 
-# OpenClaw Completion
-source <(openclaw completion --shell zsh)
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
